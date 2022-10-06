@@ -1,7 +1,9 @@
+import NavBar from './UI/Navigation/NavBar';
+
 function App() {
   return (
     <div className="App">
-      <h1>Hi mom</h1>
+      <NavBar />
     </div>
   );
 }

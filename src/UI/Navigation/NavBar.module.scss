@@ -1,0 +1,113 @@
+@use '../../Sass/variables';
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 8.1rem;
+  max-height: 15.1rem;
+  padding: 0 3.2rem;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid rgba(variables.$white, 0.2);
+
+  @media screen and (max-width: 63em) {
+    flex-direction: column;
+  }
+
+  & .logo {
+    font-family: variables.$ff-antonio;
+    font-size: 2.8rem;
+    font-weight: 400;
+  }
+
+  & ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.3rem;
+    height: 100%;
+  }
+
+  & li {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  & li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.4rem;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: all 0.3s;
+
+    @media screen and (max-width: 63em) {
+      top: unset;
+      bottom: 0;
+    }
+  }
+
+  & li:hover::before {
+    transform: translateX(0);
+  }
+
+  & a,
+  & a:visited,
+  & a:link {
+    text-decoration: none;
+    color: rgba(variables.$white, 0.75);
+    font-family: variables.$ff-spartan;
+    font-weight: 700;
+    font-size: variables.$h4-l;
+    letter-spacing: 1px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    // box-shadow: inset 0px -11px 0px -7px #f8a100;
+  }
+
+  & .hamburguer {
+    display: none;
+  }
+}
+
+.mercury::before {
+  background-color: variables.$greyish-blue;
+}
+
+.venus::before {
+  background-color: variables.$beige;
+}
+
+.earth::before {
+  background-color: variables.$purple;
+}
+
+.mars::before {
+  background-color: variables.$brown;
+}
+
+.jupiter::before {
+  background-color: variables.$dark-red;
+}
+
+.saturn::before {
+  background-color: variables.$dark-orange;
+}
+
+.uranus::before {
+  background-color: variables.$light-green;
+}
+
+.neptune::before {
+  background-color: variables.$blue;
+}
