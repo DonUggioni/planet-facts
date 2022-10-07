@@ -1,4 +1,5 @@
 @use '../../Sass/variables';
+@import '../../Sass/mixins';
 
 .navigation {
   display: flex;
@@ -23,10 +24,8 @@
   }
 
   & ul {
+    @include flex-align-center;
     list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 3.3rem;
     height: 100%;
   }
@@ -35,26 +34,6 @@
     height: 100%;
     position: relative;
     overflow: hidden;
-  }
-
-  & li::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 0.4rem;
-    width: 100%;
-    transform: translateX(-100%);
-    transition: all 0.3s;
-
-    @media screen and (max-width: 63em) {
-      top: unset;
-      bottom: 0;
-    }
-  }
-
-  & li:hover::before {
-    transform: translateX(0);
   }
 
   & a,
@@ -71,8 +50,40 @@
     display: flex;
     align-items: center;
     position: relative;
+  }
 
-    // box-shadow: inset 0px -11px 0px -7px #f8a100;
+  a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.4rem;
+    width: 100%;
+    transform: translateX(-100%);
+    transition: all 0.3s;
+
+    @media screen and (max-width: 63em) {
+      top: unset;
+      bottom: 0;
+    }
+  }
+
+  & a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.4rem;
+    width: 100%;
+
+    @media screen and (max-width: 63em) {
+      top: unset;
+      bottom: 0;
+    }
+  }
+
+  & a:hover::before {
+    transform: translateX(0);
   }
 
   & .hamburguer {
@@ -80,34 +91,42 @@
   }
 }
 
-.mercury::before {
+.mercury::before,
+.mercury_active::after {
   background-color: variables.$greyish-blue;
 }
 
-.venus::before {
+.venus::before,
+.venus_active::after {
   background-color: variables.$beige;
 }
 
-.earth::before {
+.earth::before,
+.earth_active::after {
   background-color: variables.$purple;
 }
 
-.mars::before {
+.mars::before,
+.mars_active::after {
   background-color: variables.$brown;
 }
 
-.jupiter::before {
+.jupiter::before,
+.jupiter_active::after {
   background-color: variables.$dark-red;
 }
 
-.saturn::before {
+.saturn::before,
+.saturn_active::after {
   background-color: variables.$dark-orange;
 }
 
-.uranus::before {
+.uranus::before,
+.uranus_active::before {
   background-color: variables.$light-green;
 }
 
-.neptune::before {
+.neptune::before,
+.neptune_active::after {
   background-color: variables.$blue;
 }

@@ -1,0 +1,44 @@
+@use '../../Sass/variables';
+@import '../../Sass/mixins';
+
+.description_container {
+  @include flex-align-center;
+
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 35rem;
+  color: variables.$white;
+
+  & h1 {
+    font-size: variables.$h1-l;
+    text-transform: uppercase;
+    font-family: variables.$ff-antonio;
+    font-weight: 400;
+  }
+
+  & p {
+    font-size: variables.$text-l;
+    font-family: variables.$ff-spartan;
+    line-height: 2.5rem;
+    opacity: 0.75;
+  }
+
+  & .source {
+    font-size: variables.$text-l;
+    opacity: 0.5;
+    font-family: variables.$ff-spartan;
+
+    @include flex-align-center;
+  }
+
+  & a,
+  & a:visited,
+  & a:link {
+    color: variables.$white;
+    opacity: 0.5;
+    padding-left: 0.4rem;
+    padding-right: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+}

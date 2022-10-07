@@ -1,40 +1,104 @@
-import { NavLink } from 'react-router-dom';
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import Hamburger from 'hamburger-react';
 
 import classes from './NavBar.module.scss';
 
-import React from 'react';
-
 function NavBar() {
   return (
     <nav className={classes.navigation}>
-      <div className={classes.logo}>
-        <span>the planets</span>
-      </div>
+      <Link to="/">
+        <div className={classes.logo}>
+          <span>the planets</span>
+        </div>
+      </Link>
       <ul>
-        <li className={classes.mercury}>
-          <NavLink to={'/mercury'}>mercury</NavLink>
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.mercury_active : classes.mercury
+            }
+            to={'/mercury'}
+          >
+            mercury
+          </NavLink>
         </li>
-        <li className={classes.venus}>
-          <NavLink to={'/venus'}>venus</NavLink>
+
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.venus_active : classes.venus
+            }
+            to={'/venus'}
+          >
+            venus
+          </NavLink>
         </li>
-        <li className={classes.earth}>
-          <NavLink to={'/earth'}>earth</NavLink>
+
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.earth_active : classes.earth
+            }
+            to={'/earth'}
+          >
+            earth
+          </NavLink>
         </li>
-        <li className={classes.mars}>
-          <NavLink to={'/mars'}>mars</NavLink>
+
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.mars_active : classes.mars
+            }
+            to={'/mars'}
+          >
+            mars
+          </NavLink>
         </li>
-        <li className={classes.jupiter}>
-          <NavLink to={'/jupiter'}>jupiter</NavLink>
+
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.jupiter_active : classes.jupiter
+            }
+            to={'/jupiter'}
+          >
+            jupiter
+          </NavLink>
         </li>
-        <li className={classes.saturn}>
-          <NavLink to={'/saturn'}>saturn</NavLink>
+
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.saturn_active : classes.saturn
+            }
+            to={'/saturn'}
+          >
+            saturn
+          </NavLink>
         </li>
-        <li className={classes.uranus}>
-          <NavLink to={'/uranus'}>uranus</NavLink>
+
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.uranus_active : classes.uranus
+            }
+            to={'/uranus'}
+          >
+            uranus
+          </NavLink>
         </li>
-        <li className={classes.neptune}>
-          <NavLink to={'/neptune'}>neptune</NavLink>
+
+        <li>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.neptune_active : classes.neptune
+            }
+            to={'/neptune'}
+          >
+            neptune
+          </NavLink>
         </li>
       </ul>
       <div className={classes.hamburguer}>

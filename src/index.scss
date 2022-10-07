@@ -11,6 +11,7 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
@@ -20,6 +21,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  overflow-x: hidden;
 
   color: variables.$white;
 }
