@@ -1,7 +1,9 @@
 import React from 'react';
 
+import './SectionLayout.scss';
+
 function Section(props) {
-  return <section>{props.children}</section>;
+  return <section className="section_layout">{props.children}</section>;
 }
 
 export default Section;

@@ -1,0 +1,29 @@
+.section_layout {
+  width: 100vw;
+  height: 90vh;
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.content_wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.img_container {
+  align-self: center;
+  justify-self: center;
+}
+
+.description_container {
+  grid-column: 2/3;
+}
+
+.planet_info_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}

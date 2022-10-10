@@ -1,0 +1,28 @@
+@use '../../Sass/variables';
+
+.planet_info {
+  max-width: 25.5rem;
+  width: 100%;
+  max-height: 12.8rem;
+  color: variables.$white;
+  text-transform: uppercase;
+  border: 1px solid rgba(variables.$medium-grey, 0.2);
+  text-align: left;
+
+  padding: 2rem 2.4rem 2.7rem;
+
+  & span {
+    font-size: variables.$h4-l;
+    font-family: variables.$ff-spartan;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  & h2 {
+    font-size: variables.$h2-l;
+    font-family: variables.$ff-antonio;
+    letter-spacing: -1.5px;
+    font-weight: 400;
+  }
+}

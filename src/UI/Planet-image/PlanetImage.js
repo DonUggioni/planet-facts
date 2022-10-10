@@ -1,13 +1,9 @@
 import React from 'react';
 
-import classes from './PlanetImage.module.scss';
+// import classes from './PlanetImage.module.scss';
 
 function PlanetImage(props) {
-  return (
-    <div>
-      <img src={props.src} alt={props.alt} />
-    </div>
-  );
+  return <img src={props.src} alt={props.alt} />;
 }
 
 export default PlanetImage;
