@@ -27,14 +27,14 @@ const info = {
   averageTemp: data[0].temperature,
 };
 function Mercury() {
-  const [innerImg, setInnerImg] = useState(false);
+  const [image, setImage] = useState(false);
 
   function internalStructureClickHandler() {
-    setInnerImg(true);
+    setImage(true);
   }
 
-  function overViewClickHandler() {
-    setInnerImg(false);
+  function overviewClickHandler() {
+    setImage(false);
   }
 
   return (
@@ -42,7 +42,7 @@ function Mercury() {
       <div className="content_wrapper">
         <div className="img_container">
           <PlanetImage
-            src={innerImg ? mercuryImgInner : mercuryImg}
+            src={image ? mercuryImgInner : mercuryImg}
             alt={'Mercury'}
           />
         </div>
@@ -55,13 +55,17 @@ function Mercury() {
             />
             <div className={classes.button_layout}>
               <Button
-                onClick={overViewClickHandler}
+                onClick={overviewClickHandler}
                 to={'/mercury'}
                 number={'01'}
               >
                 Overview
               </Button>
-              <Button onClick={internalStructureClickHandler} number={'02'}>
+              <Button
+                onClick={internalStructureClickHandler}
+                to={'inner'}
+                number={'02'}
+              >
                 Internal structure
               </Button>
               <Button to={'/mercury/surface'} number={'03'}>
