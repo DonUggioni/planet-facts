@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PlanetImage from '../../UI/Planet-image/PlanetImage';
-import Button from '../../UI/Button/Button';
+import Buttons from '../../UI/Button/Buttons';
 
-import classes from '../../Layout/Button-layout/ButtonLayout.module.scss';
 import '../../Layout/SectionLayout.scss';
 
 import mercuryImg from '../../assets/images/planet-mercury.svg';
@@ -27,24 +26,11 @@ const info = {
   averageTemp: data[0].temperature,
 };
 function Mercury() {
-  const [image, setImage] = useState(false);
-
-  function internalStructureClickHandler() {
-    setImage(true);
-  }
-
-  function overviewClickHandler() {
-    setImage(false);
-  }
-
   return (
     <section className="section_layout">
       <div className="content_wrapper">
         <div className="img_container">
-          <PlanetImage
-            src={image ? mercuryImgInner : mercuryImg}
-            alt={'Mercury'}
-          />
+          <PlanetImage src={mercuryImg} alt={'Mercury'} />
         </div>
         <div className="description_container">
           <Description>
@@ -53,24 +39,8 @@ function Mercury() {
               planetDescription={info.overview}
               href={info.overviewSource}
             />
-            <div className={classes.button_layout}>
-              <Button
-                onClick={overviewClickHandler}
-                to={'/mercury'}
-                number={'01'}
-              >
-                Overview
-              </Button>
-              <Button
-                onClick={internalStructureClickHandler}
-                to={'inner'}
-                number={'02'}
-              >
-                Internal structure
-              </Button>
-              <Button to={'/mercury/surface'} number={'03'}>
-                surface geology
-              </Button>
+            <div className="buttons">
+              <Buttons />
             </div>
           </Description>
         </div>

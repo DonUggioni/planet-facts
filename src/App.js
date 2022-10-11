@@ -9,8 +9,11 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route index element={<Home />} />
-        <Route path="/mercury" element={<Mercury />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/mercury" element={<Mercury />}>
+          <Route path="overview" element={<Mercury />} />
+          <Route path="internal" element={<Mercury />} />
+        </Route>
       </Routes>
     </div>
   );
