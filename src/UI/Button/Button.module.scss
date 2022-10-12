@@ -11,6 +11,7 @@
 
 .button {
   height: 4.8rem;
+  width: 100%;
   background-color: transparent;
 
   font-size: variables.$h3-l;
@@ -76,32 +77,40 @@
 
 .mercury_active::after {
   background-color: variables.$greyish-blue;
+  border-color: variables.$greyish-blue;
 }
 
 .venus_active::after {
   background-color: variables.$beige;
+  border-color: variables.$beige;
 }
 
 .earth_active::after {
   background-color: variables.$purple;
+  border-color: variables.$purple;
 }
 
 .mars_active::after {
   background-color: variables.$brown;
+  border-color: variables.$brown;
 }
 
 .jupiter_active::after {
   background-color: variables.$dark-red;
+  border-color: variables.$dark-red;
 }
 
 .saturn_active::after {
   background-color: variables.$dark-orange;
+  border-color: variables.$dark-orange;
 }
 
-.uranus_active::before {
+.uranus_active::after {
   background-color: variables.$light-green;
+  border-color: variables.$light-green;
 }
 
 .neptune_active::after {
   background-color: variables.$blue;
+  border-color: variables.$blue;
 }

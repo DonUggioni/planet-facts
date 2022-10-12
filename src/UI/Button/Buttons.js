@@ -9,25 +9,32 @@ function Buttons(props) {
       <li className={classes.button}>
         <NavLink
           className={({ isActive }) =>
-            isActive ? classes.mercury_active : undefined
+            isActive ? classes[props.activeClass] : undefined
           }
           to="overview"
+          onClick={props.onOverview}
         >
           <span className={classes.number}>01</span> overview
         </NavLink>
       </li>
       <li className={classes.button}>
         <NavLink
-          className={({ isActive }) => (isActive ? classes.mercury_active : '')}
-          to="/mercury/internal"
+          className={({ isActive }) =>
+            isActive ? classes[props.activeClass] : ''
+          }
+          to="internal"
+          onClick={props.onInternal}
         >
           <span className={classes.number}>02</span> internal structure
         </NavLink>
       </li>
       <li className={classes.button}>
         <NavLink
-          className={({ isActive }) => (isActive ? classes.mercury_active : '')}
+          className={({ isActive }) =>
+            isActive ? classes[props.activeClass] : ''
+          }
           to="geology"
+          onClick={props.onGeology}
         >
           <span className={classes.number}>03</span> surface geology
         </NavLink>

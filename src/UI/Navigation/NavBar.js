@@ -18,7 +18,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.mercury_active : classes.mercury
             }
-            to={'/mercury'}
+            to={'/mercury/overview'}
           >
             mercury
           </NavLink>
@@ -29,7 +29,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.venus_active : classes.venus
             }
-            to={'/venus'}
+            to={'/venus/overview'}
           >
             venus
           </NavLink>
@@ -40,7 +40,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.earth_active : classes.earth
             }
-            to={'/earth'}
+            to={'/earth/overview'}
           >
             earth
           </NavLink>
@@ -51,7 +51,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.mars_active : classes.mars
             }
-            to={'/mars'}
+            to={'/mars/overview'}
           >
             mars
           </NavLink>
@@ -62,7 +62,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.jupiter_active : classes.jupiter
             }
-            to={'/jupiter'}
+            to={'/jupiter/overview'}
           >
             jupiter
           </NavLink>
@@ -73,7 +73,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.saturn_active : classes.saturn
             }
-            to={'/saturn'}
+            to={'/saturn/overview'}
           >
             saturn
           </NavLink>
@@ -84,7 +84,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.uranus_active : classes.uranus
             }
-            to={'/uranus'}
+            to={'/uranus/overview'}
           >
             uranus
           </NavLink>
@@ -95,7 +95,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.neptune_active : classes.neptune
             }
-            to={'/neptune'}
+            to={'/neptune/overview'}
           >
             neptune
           </NavLink>
