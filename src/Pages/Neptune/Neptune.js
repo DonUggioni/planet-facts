@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PlanetImage from '../../UI/Planet-image/PlanetImage';
 import PlanetGeologyImage from '../../UI/Planet-geology-image/PlanetGeologyImage';
 import Buttons from '../../UI/Button/Buttons';
@@ -13,6 +13,8 @@ import Description from '../../Layout/Description/Description';
 import PlanetInfo from '../../UI/Planet-info/PlanetInfo';
 
 import data from '../../data.json';
+import { AnimatePresence } from 'framer-motion';
+import Section from '../../Layout/Section';
 
 const info = {
   name: data[7].name,
@@ -33,42 +35,38 @@ function Neptune() {
   const [geology, setGeology] = useState(false);
   const [animate, setAnimate] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setAnimate(false);
-    }, 500);
-  }, [animate]);
-
   function overviewHandler() {
     setGeology(false);
     setInternal(false);
     setOverview(true);
-    setAnimate(true);
+    setAnimate(() => !animate);
   }
 
   function internalHandler() {
     setOverview(false);
     setGeology(false);
     setInternal(true);
-    setAnimate(true);
+    setAnimate(() => !animate);
   }
 
   function geologyHandler() {
     setGeology(true);
     setInternal(false);
     setOverview(false);
-    setAnimate(true);
+    setAnimate(() => !animate);
   }
 
   return (
-    <section className="section_layout">
+    <Section className="section_layout">
       <div className="content_wrapper">
         <div className="img_container">
-          <PlanetImage
-            src={internal === true ? neptuneImgInner : neptuneImg}
-            alt={'neptune'}
-            className={animate ? 'animate' : ''}
-          />
+          <AnimatePresence mode="wait">
+            <PlanetImage
+              src={internal === true ? neptuneImgInner : neptuneImg}
+              alt={'neptune'}
+              key={animate}
+            />
+          </AnimatePresence>
           <PlanetGeologyImage
             src={neptuneGeologyImg}
             alt={'neptune geology'}
@@ -120,7 +118,7 @@ function Neptune() {
         <PlanetInfo infoTitle={'radius'} infoData={info.radius} />
         <PlanetInfo infoTitle={'average temp.'} infoData={info.averageTemp} />
       </div>
-    </section>
+    </Section>
   );
 }
 

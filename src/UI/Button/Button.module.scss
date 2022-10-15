@@ -27,6 +27,10 @@
   position: relative;
   overflow: hidden;
 
+  @media screen and (max-width: 64em) {
+    font-size: variables.$h3-m;
+  }
+
   & a,
   & a:link,
   & a:visited {

@@ -9,7 +9,7 @@ function Buttons(props) {
       <li className={classes.button}>
         <NavLink
           className={({ isActive }) =>
-            isActive ? classes[props.activeClass] : undefined
+            isActive ? classes[props.activeClass] : ''
           }
           to="overview"
           onClick={props.onOverview}

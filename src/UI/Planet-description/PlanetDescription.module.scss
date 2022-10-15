@@ -16,6 +16,10 @@
     text-transform: uppercase;
     font-family: variables.$ff-antonio;
     font-weight: 400;
+
+    @media screen and (max-width: 64em) {
+      font-size: variables.$h1-m;
+    }
   }
 
   & p {
@@ -23,6 +27,10 @@
     font-family: variables.$ff-spartan;
     line-height: 2.5rem;
     opacity: 0.75;
+
+    @media screen and (max-width: 64em) {
+      font-size: variables.$text-m;
+    }
   }
 
   & .source {
@@ -31,6 +39,10 @@
     font-family: variables.$ff-spartan;
 
     @include flex-align-center;
+
+    @media screen and (max-width: 64em) {
+      font-size: variables.$text-m;
+    }
   }
 
   & a,

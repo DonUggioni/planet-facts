@@ -1,7 +1,7 @@
 @use '../../Sass/variables';
 
 .planet_info {
-  max-width: 25.5rem;
+  max-width: 28.5rem;
   width: 100%;
   max-height: 12.8rem;
   color: variables.$white;
@@ -11,12 +11,20 @@
 
   padding: 2rem 2.4rem 2.7rem;
 
+  @media screen and (max-width: 64em) {
+    padding: 1.6 1.6rem 1.9rem;
+  }
+
   & span {
     font-size: variables.$h4-l;
     font-family: variables.$ff-spartan;
     opacity: 0.5;
     letter-spacing: 1px;
     font-weight: 700;
+
+    @media screen and (max-width: 64em) {
+      font-size: variables.$h4-m;
+    }
   }
 
   & h2 {
@@ -24,5 +32,9 @@
     font-family: variables.$ff-antonio;
     letter-spacing: -1.5px;
     font-weight: 400;
+
+    @media screen and (max-width: 64em) {
+      font-size: variables.$h2-m;
+    }
   }
 }

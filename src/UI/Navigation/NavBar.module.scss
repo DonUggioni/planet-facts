@@ -13,7 +13,7 @@
 
   border-bottom: 1px solid rgba(variables.$white, 0.2);
 
-  @media screen and (max-width: 63em) {
+  @media screen and (max-width: 64em) {
     flex-direction: column;
   }
 
@@ -62,7 +62,7 @@
     transform: translateX(-100%);
     transition: all 0.3s;
 
-    @media screen and (max-width: 63em) {
+    @media screen and (max-width: 64em) {
       top: unset;
       bottom: 0;
     }
@@ -76,7 +76,7 @@
     height: 0.4rem;
     width: 100%;
 
-    @media screen and (max-width: 63em) {
+    @media screen and (max-width: 64em) {
       top: unset;
       bottom: 0;
     }
@@ -122,7 +122,7 @@
 }
 
 .uranus::before,
-.uranus_active::before {
+.uranus_active::after {
   background-color: variables.$light-green;
 }
 

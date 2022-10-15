@@ -1,0 +1,7 @@
+.planet_img {
+  max-width: 66.6rem;
+
+  @media screen and (max-width: 64em) {
+    max-width: 42.2rem;
+  }
+}

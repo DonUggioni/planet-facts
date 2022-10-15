@@ -18,7 +18,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.mercury_active : classes.mercury
             }
-            to={'/mercury/overview'}
+            to={'mercury/overview'}
           >
             mercury
           </NavLink>

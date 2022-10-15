@@ -5,12 +5,20 @@
   display: grid;
   align-items: center;
   justify-content: center;
+  padding: 0 3.2rem;
 }
 
 .content_wrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
   position: relative;
+  width: 90vw;
+
+  @media screen and (max-width: 64em) {
+    grid-template-columns: 1fr 1fr;
+    max-width: unset;
+    width: 90vw;
+  }
 }
 
 .img_container {
@@ -25,22 +33,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-}
 
-.animate {
-  animation: fadeIn;
-  animation-duration: 0.5s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    filter: blur(10px);
-  }
-
-  to {
-    opacity: 1;
-    filter: blur(0);
+  @media screen and (max-width: 64em) {
+    grid-column: span 2;
+    margin-bottom: 4rem;
   }
 }
 
@@ -53,19 +49,38 @@
   opacity: 0;
 
   transition: 0.5s all ease-in-out;
+  transition-delay: 0.1s;
+
+  @media screen and (max-width: 64em) {
+    max-width: 12.3rem;
+    max-height: 15.9rem;
+  }
 }
 
 .geology_img--visible {
   transform: translateY(0);
   opacity: 1;
+
+  @media screen and (max-width: 64em) {
+    transform: translateY(-3rem);
+  }
 }
 
 .description_container {
   grid-column: 2/3;
+
+  @media screen and (max-width: 64em) {
+    grid-row: 2;
+    grid-column: 1 / -1;
+  }
 }
 
 .buttons {
   width: 100%;
+
+  @media screen and (max-width: 64em) {
+    max-width: 28.1rem;
+  }
 }
 
 .planet_info_container {
@@ -73,4 +88,8 @@
   display: flex;
   justify-content: space-between;
   gap: 3rem;
+
+  @media screen and (max-width: 64em) {
+    gap: 1.2rem;
+  }
 }
