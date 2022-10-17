@@ -1,4 +1,5 @@
 .section_layout {
+  max-width: 160rem;
   width: 100vw;
   height: 90vh;
   margin: 0 auto;
@@ -84,9 +85,10 @@
 }
 
 .planet_info_container {
+  max-width: 160rem;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 3rem;
 
   @media screen and (max-width: 64em) {

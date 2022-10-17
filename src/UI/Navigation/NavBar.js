@@ -1,19 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Hamburger from 'hamburger-react';
+import arrowIcon from '../../assets/images/icon-chevron.svg';
 
 import classes from './NavBar.module.scss';
 
+let navVariants = {};
+let linkVariants = {};
+const isMobile = window.innerWidth <= 672;
+if (isMobile) {
+  navVariants = {
+    hidden: {
+      x: '100%',
+      opacity: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.05,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  linkVariants = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: 'spring', stiffness: 300, damping: 24 },
+    },
+    hidden: { opacity: 0, x: '20%', transition: { duration: 0.2 } },
+  };
+}
+
 function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function navBarToggle() {
+    setIsOpen(() => !isOpen);
+  }
+
+  function closeNavBar() {
+    setIsOpen(false);
+  }
+
   return (
     <nav className={classes.navigation}>
       <Link to="/">
-        <div className={classes.logo}>
+        <div className={classes.logo} onClick={closeNavBar}>
           <span>the planets</span>
         </div>
       </Link>
-      <ul>
-        <li>
+
+      <motion.ul
+        initial={false}
+        animate={isOpen ? 'visible' : 'hidden'}
+        variants={navVariants}
+        onClick={navBarToggle}
+      >
+        <motion.li variants={linkVariants}>
           <NavLink
             className={({ isActive }) =>
               isActive ? classes.mercury_active : classes.mercury
@@ -21,10 +72,15 @@ function NavBar() {
             to={'mercury/overview'}
           >
             mercury
+            <img
+              className={classes.arrow_icon}
+              alt="arrow icon"
+              src={arrowIcon}
+            />
           </NavLink>
-        </li>
+        </motion.li>
 
-        <li>
+        <motion.li variants={linkVariants}>
           <NavLink
             className={({ isActive }) =>
               isActive ? classes.venus_active : classes.venus
@@ -32,10 +88,15 @@ function NavBar() {
             to={'/venus/overview'}
           >
             venus
+            <img
+              className={classes.arrow_icon}
+              alt="arrow icon"
+              src={arrowIcon}
+            />
           </NavLink>
-        </li>
+        </motion.li>
 
-        <li>
+        <motion.li variants={linkVariants}>
           <NavLink
             className={({ isActive }) =>
               isActive ? classes.earth_active : classes.earth
@@ -43,10 +104,15 @@ function NavBar() {
             to={'/earth/overview'}
           >
             earth
+            <img
+              className={classes.arrow_icon}
+              alt="arrow icon"
+              src={arrowIcon}
+            />
           </NavLink>
-        </li>
+        </motion.li>
 
-        <li>
+        <motion.li variants={linkVariants}>
           <NavLink
             className={({ isActive }) =>
               isActive ? classes.mars_active : classes.mars
@@ -54,10 +120,15 @@ function NavBar() {
             to={'/mars/overview'}
           >
             mars
+            <img
+              className={classes.arrow_icon}
+              alt="arrow icon"
+              src={arrowIcon}
+            />
           </NavLink>
-        </li>
+        </motion.li>
 
-        <li>
+        <motion.li variants={linkVariants}>
           <NavLink
             className={({ isActive }) =>
               isActive ? classes.jupiter_active : classes.jupiter
@@ -65,10 +136,15 @@ function NavBar() {
             to={'/jupiter/overview'}
           >
             jupiter
+            <img
+              className={classes.arrow_icon}
+              alt="arrow icon"
+              src={arrowIcon}
+            />
           </NavLink>
-        </li>
+        </motion.li>
 
-        <li>
+        <motion.li variants={linkVariants}>
           <NavLink
             className={({ isActive }) =>
               isActive ? classes.saturn_active : classes.saturn
@@ -76,10 +152,15 @@ function NavBar() {
             to={'/saturn/overview'}
           >
             saturn
+            <img
+              className={classes.arrow_icon}
+              alt="arrow icon"
+              src={arrowIcon}
+            />
           </NavLink>
-        </li>
+        </motion.li>
 
-        <li>
+        <motion.li variants={linkVariants}>
           <NavLink
             className={({ isActive }) =>
               isActive ? classes.uranus_active : classes.uranus
@@ -87,10 +168,15 @@ function NavBar() {
             to={'/uranus/overview'}
           >
             uranus
+            <img
+              className={classes.arrow_icon}
+              alt="arrow icon"
+              src={arrowIcon}
+            />
           </NavLink>
-        </li>
+        </motion.li>
 
-        <li>
+        <motion.li variants={linkVariants}>
           <NavLink
             className={({ isActive }) =>
               isActive ? classes.neptune_active : classes.neptune
@@ -98,11 +184,17 @@ function NavBar() {
             to={'/neptune/overview'}
           >
             neptune
+            <img
+              className={classes.arrow_icon}
+              alt="arrow icon"
+              src={arrowIcon}
+            />
           </NavLink>
-        </li>
-      </ul>
-      <div className={classes.hamburguer}>
-        <Hamburger size={20} />
+        </motion.li>
+      </motion.ul>
+
+      <div className={classes.hamburguer} onClick={navBarToggle}>
+        <Hamburger size={25} toggled={isOpen} />
       </div>
     </nav>
   );
