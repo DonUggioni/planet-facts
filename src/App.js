@@ -19,7 +19,8 @@ function App() {
       <NavBar />
       <AnimatePresence mode="wait">
         <Routes key={location.pathname} location={location}>
-          <Route path="/" element={<Home />} />
+          <Route path="/#" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/mercury" element={<Mercury />} />
           <Route path="/venus" element={<Venus />} />
           <Route path="/earth" element={<Earth />} />
