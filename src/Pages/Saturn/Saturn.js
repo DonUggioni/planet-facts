@@ -103,7 +103,9 @@ function Saturn() {
                 onOverview={overviewHandler}
                 onInternal={internalHandler}
                 onGeology={geologyHandler}
-                activeClass={'saturn_active'}
+                overviewActive={overview ? 'saturn_active' : ''}
+                internalActive={internal ? 'saturn_active' : ''}
+                geoActive={geology ? 'saturn_active' : ''}
               />
             </div>
           </Description>

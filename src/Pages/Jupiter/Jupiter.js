@@ -103,7 +103,9 @@ function Jupiter() {
                 onOverview={overviewHandler}
                 onInternal={internalHandler}
                 onGeology={geologyHandler}
-                activeClass={'jupiter_active'}
+                overviewActive={overview ? 'jupiter_active' : ''}
+                internalActive={internal ? 'jupiter_active' : ''}
+                geoActive={geology ? 'jupiter_active' : ''}
               />
             </div>
           </Description>

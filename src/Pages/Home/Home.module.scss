@@ -3,16 +3,16 @@
 
 .main {
   height: 85vh;
-  width: 100%;
   @include flex-align-center;
+  overflow: hidden;
 
   & .header_wrapper {
     @include flex-align-center;
     flex-direction: column;
     gap: 3.2rem;
     text-transform: uppercase;
-
-    margin-right: 3rem;
+    position: relative;
+    max-width: 30rem;
   }
 
   & .header {
@@ -21,6 +21,10 @@
     font-weight: 400;
     letter-spacing: 1px;
     opacity: 0.8;
+
+    @media screen and (max-width: 42em) {
+      font-size: variables.$h1-m;
+    }
   }
 
   & .secondary_header {
@@ -28,42 +32,66 @@
     font-size: variables.$h3-l;
     letter-spacing: 2px;
     color: variables.$white;
+
+    @media screen and (max-width: 42em) {
+      font-size: variables.$h3-m;
+    }
   }
 
   & .rocket_icon {
     height: 10rem;
     width: 10rem;
-    transform: rotate(-15deg);
 
-    position: relative;
+    position: absolute;
+    animation: flyingRocket linear 3s infinite;
+    z-index: -1;
 
     & img {
-      animation: motion-animation 0.8s infinite;
-      position: relative;
+      transform: rotate(15deg);
+    }
+
+    @media screen and (max-width: 42em) {
+      animation: flyingRocket 8s infinite;
+      height: 7rem;
+      width: 7rem;
     }
   }
 
-  & .rocket_icon::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 3rem;
-    height: 100%;
-    width: 40px;
-    transform: rotate(48deg);
-    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-  }
-
-  @keyframes motion-animation {
+  @keyframes flyingRocket {
     0% {
-      transform: translateY(3px);
-    }
-    50% {
-      transform: translateY(0);
+      transform: translate(-950%, 455%);
     }
 
     100% {
-      transform: translateY(3px);
+      transform: translate(950%, -455%);
+    }
+  }
+
+  & .ufo_icon {
+    height: 6rem;
+    width: 6rem;
+    position: absolute;
+    transform: translateX(48rem);
+    animation: ufoAnimation 6s ease-in-out infinite;
+
+    @media screen and (max-width: 42em) {
+      animation: ufoAnimation 12s infinite;
+      height: 4rem;
+      width: 4rem;
+    }
+  }
+
+  @keyframes ufoAnimation {
+    0% {
+      transform: translateX(48rem);
+    }
+
+    50% {
+      transform: translateX(-60rem);
+    }
+
+    100% {
+      transform: translateX(36rem);
     }
   }
 }

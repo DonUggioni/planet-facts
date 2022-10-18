@@ -4,15 +4,15 @@ import { motion } from 'framer-motion';
 
 function Section(props) {
   return (
-    <motion.section
+    <motion.main
       className={props.className}
-      initial={{ y: 100, opacity: 0 }}
+      initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: 100, opacity: 0 }}
+      exit={{ y: 50, opacity: 0 }}
       transition={{ duration: 0.8, ease: 'easeInOut' }}
     >
       {props.children}
-    </motion.section>
+    </motion.main>
   );
 }
 

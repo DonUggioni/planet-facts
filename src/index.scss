@@ -12,16 +12,16 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  height: 100%;
 }
 
 body {
-  height: 100vh;
-  background-image: url('./assets/images/background-stars.svg'),
+  height: 100%;
+  background: url('./assets/images/background-stars.svg'),
     linear-gradient(variables.$dark-blue, variables.$dark-blue);
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
-  // overflow-x: hidden;
+  background-size: auto;
 
   color: variables.$white;
+  overflow-x: hidden;
 }

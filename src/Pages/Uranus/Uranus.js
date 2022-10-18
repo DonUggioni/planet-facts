@@ -103,7 +103,9 @@ function Uranus() {
                 onOverview={overviewHandler}
                 onInternal={internalHandler}
                 onGeology={geologyHandler}
-                activeClass={'uranus_active'}
+                overviewActive={overview ? 'uranus_active' : ''}
+                internalActive={internal ? 'uranus_active' : ''}
+                geoActive={geology ? 'uranus_active' : ''}
               />
             </div>
           </Description>

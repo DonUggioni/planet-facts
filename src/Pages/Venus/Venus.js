@@ -103,7 +103,9 @@ function Venus() {
                 onOverview={overviewHandler}
                 onInternal={internalHandler}
                 onGeology={geologyHandler}
-                activeClass={'venus_active'}
+                overviewActive={overview ? 'venus_active' : ''}
+                internalActive={internal ? 'venus_active' : ''}
+                geoActive={geology ? 'venus_active' : ''}
               />
             </div>
           </Description>

@@ -11,6 +11,12 @@
   color: variables.$white;
   margin-bottom: 3.8rem;
 
+  @media screen and (max-width: 42em) {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
   & h1 {
     font-size: variables.$h1-l;
     text-transform: uppercase;
@@ -19,6 +25,10 @@
 
     @media screen and (max-width: 64em) {
       font-size: variables.$h1-m;
+    }
+
+    @media screen and (max-width: 42em) {
+      font-size: variables.$h1-s;
     }
   }
 

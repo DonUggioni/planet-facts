@@ -103,7 +103,9 @@ function Mars() {
                 onOverview={overviewHandler}
                 onInternal={internalHandler}
                 onGeology={geologyHandler}
-                activeClass={'mars_active'}
+                overviewActive={overview ? 'mars_active' : ''}
+                internalActive={internal ? 'mars_active' : ''}
+                geoActive={geology ? 'mars_active' : ''}
               />
             </div>
           </Description>

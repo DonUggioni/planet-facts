@@ -69,7 +69,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.mercury_active : classes.mercury
             }
-            to={'mercury/overview'}
+            to={'/mercury'}
           >
             mercury
             <img
@@ -85,7 +85,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.venus_active : classes.venus
             }
-            to={'/venus/overview'}
+            to={'/venus'}
           >
             venus
             <img
@@ -101,7 +101,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.earth_active : classes.earth
             }
-            to={'/earth/overview'}
+            to={'/earth'}
           >
             earth
             <img
@@ -117,7 +117,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.mars_active : classes.mars
             }
-            to={'/mars/overview'}
+            to={'/mars'}
           >
             mars
             <img
@@ -133,7 +133,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.jupiter_active : classes.jupiter
             }
-            to={'/jupiter/overview'}
+            to={'/jupiter'}
           >
             jupiter
             <img
@@ -149,7 +149,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.saturn_active : classes.saturn
             }
-            to={'/saturn/overview'}
+            to={'/saturn'}
           >
             saturn
             <img
@@ -165,7 +165,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.uranus_active : classes.uranus
             }
-            to={'/uranus/overview'}
+            to={'/uranus'}
           >
             uranus
             <img
@@ -181,7 +181,7 @@ function NavBar() {
             className={({ isActive }) =>
               isActive ? classes.neptune_active : classes.neptune
             }
-            to={'/neptune/overview'}
+            to={'/neptune'}
           >
             neptune
             <img

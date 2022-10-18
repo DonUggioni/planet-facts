@@ -104,7 +104,9 @@ function Earth() {
                 onOverview={overviewHandler}
                 onInternal={internalHandler}
                 onGeology={geologyHandler}
-                activeClass={'earth_active'}
+                overviewActive={overview ? 'earth_active' : ''}
+                internalActive={internal ? 'earth_active' : ''}
+                geoActive={geology ? 'earth_active' : ''}
               />
             </div>
           </Description>

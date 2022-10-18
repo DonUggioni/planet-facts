@@ -103,7 +103,9 @@ function Neptune() {
                 onOverview={overviewHandler}
                 onInternal={internalHandler}
                 onGeology={geologyHandler}
-                activeClass={'neptune_active'}
+                overviewActive={overview ? 'neptune_active' : ''}
+                internalActive={internal ? 'neptune_active' : ''}
+                geoActive={geology ? 'neptune_active' : ''}
               />
             </div>
           </Description>

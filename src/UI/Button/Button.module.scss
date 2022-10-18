@@ -7,6 +7,13 @@
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+
+  @media screen and (max-width: 42em) {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    width: 100vw;
+  }
 }
 
 .button {
@@ -31,10 +38,19 @@
     font-size: variables.$h3-m;
   }
 
-  & a,
-  & a:link,
-  & a:visited {
+  @media screen and (max-width: 42em) {
+    height: 5rem;
+    border: none;
+    border-bottom: 1px solid rgba(variables.$medium-grey, 0.25);
+    padding: 0 2.4rem;
+  }
+
+  // & a,
+  // & a:link,
+  // & a:visited
+  & div {
     padding: 1.4rem 2.8rem;
+    cursor: pointer;
 
     width: 100%;
     height: 100%;
@@ -44,31 +60,42 @@
     align-items: center;
     gap: 2.8rem;
     position: relative;
+
+    @media screen and (max-width: 42em) {
+      justify-content: center;
+      width: 100%;
+    }
   }
 
   & .number {
     opacity: 0.5;
+
+    @media screen and (max-width: 42em) {
+      display: none;
+    }
   }
 
-  & a::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 101%;
-    top: 0;
-    left: 0;
-    transform: translateX(-100%);
-    background-color: variables.$medium-grey;
-    opacity: 0.2;
-    transition: all ease-out 0.2s;
-    z-index: -4;
+  @media screen and (min-width: 42em) {
+    & div::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 101%;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-color: variables.$medium-grey;
+      opacity: 0.2;
+      transition: all ease-out 0.2s;
+      z-index: -4;
+    }
+
+    & div:hover::before {
+      transform: translateX(0);
+    }
   }
 
-  & a:hover::before {
-    transform: translateX(0);
-  }
-
-  & a::after {
+  & div::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -76,6 +103,12 @@
     top: 0;
     left: 0;
     z-index: -2;
+
+    @media screen and (max-width: 42em) {
+      height: 0.4rem;
+      top: unset;
+      bottom: 0;
+    }
   }
 }
 

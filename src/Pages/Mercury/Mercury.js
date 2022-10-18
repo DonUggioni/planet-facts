@@ -40,7 +40,6 @@ function Mercury() {
     setGeology(false);
     setInternal(false);
     setOverview(true);
-    setAnimate(() => !animate);
   }
 
   function internalHandler() {
@@ -105,7 +104,9 @@ function Mercury() {
                 onOverview={overviewHandler}
                 onInternal={internalHandler}
                 onGeology={geologyHandler}
-                activeClass={'mercury_active'}
+                overviewActive={overview ? 'mercury_active' : ''}
+                internalActive={internal ? 'mercury_active' : ''}
+                geoActive={geology ? 'mercury_active' : ''}
               />
             </div>
           </Description>
