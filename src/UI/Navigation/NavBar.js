@@ -46,8 +46,12 @@ function NavBar() {
     setIsOpen(() => !isOpen);
   }
 
+  document.body.style.overflowY = isOpen && isMobile ? 'hidden' : 'unset';
+
   function closeNavBar() {
     setIsOpen(false);
+
+    document.body.style.overflowY = 'unset';
   }
 
   return (
