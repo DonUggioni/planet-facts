@@ -43,15 +43,15 @@
     width: 10rem;
 
     position: absolute;
-    animation: flyingRocket linear 3s infinite;
+    animation: flyingRocket linear 4s infinite;
     z-index: -1;
 
     & img {
-      transform: rotate(15deg);
+      transform: rotate(20deg);
     }
 
     @media screen and (max-width: 42em) {
-      animation: flyingRocket 8s infinite;
+      animation: flyingRocket 10s infinite;
       height: 7rem;
       width: 7rem;
     }
@@ -59,11 +59,11 @@
 
   @keyframes flyingRocket {
     0% {
-      transform: translate(-950%, 455%);
+      transform: translate(-1300%, 355%);
     }
 
     100% {
-      transform: translate(950%, -455%);
+      transform: translate(1300%, -355%);
     }
   }
 
